@@ -52,4 +52,3 @@ Since the project is built in pure static HTML/CSS, you can run it instantly:
 
 * `index.html` - HTML structural layouts for the chassis, controls, environment, and Pikachu anatomy.
 * `style.css` - Design tokens, layout grids, Pikachu curves, keyframe animations, and screen shaders.
-* `how_i_developed.pdf` - PDF Development and Architecture Report detailing the technical build process.
