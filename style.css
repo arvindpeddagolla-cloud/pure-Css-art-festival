@@ -1112,6 +1112,13 @@ input[type="checkbox"] {
 
 /* ==========================================================================
    CSS STATE CONTROLLERS (THE INTERACTIVE ENGINE)
+   
+   FIXED: The state checkboxes (#power-toggle, #night-toggle, etc.) sit 
+   as direct children of the body, making them siblings of .app-container. 
+   Therefore, to target nested elements inside the console, we must use:
+   `#checkbox-id:checked ~ .app-container .target-element`
+   (Previously, this used `~ .console-wrapper` which failed because 
+   .console-wrapper is nested inside .app-container).
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
