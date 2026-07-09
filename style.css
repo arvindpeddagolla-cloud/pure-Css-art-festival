@@ -157,7 +157,7 @@ input[type="checkbox"] {
 }
 
 /* Slide Power Switch knob when checked */
-#power-toggle:checked ~ .app-container .power-switch-knob {
+#power-toggle:checked ~ .console-wrapper .power-switch-knob {
   transform: translateX(12px);
   background-color: #a2a6ad;
 }
@@ -283,7 +283,7 @@ input[type="checkbox"] {
 }
 
 /* When power toggle is checked, LED glows green */
-#power-toggle:checked ~ .app-container .power-led {
+#power-toggle:checked ~ .console-wrapper .power-led {
   background-color: var(--color-led-on);
   box-shadow: 0 0 8px var(--color-led-on), 0 0 15px var(--color-led-on);
 }
@@ -1116,7 +1116,7 @@ input[type="checkbox"] {
    FIXED: The state checkboxes (#power-toggle, #night-toggle, etc.) sit 
    as direct children of the body, making them siblings of .app-container. 
    Therefore, to target nested elements inside the console, we must use:
-   `#checkbox-id:checked ~ .app-container .target-element`
+   `#checkbox-id:checked ~ .console-wrapper .target-element`
    (Previously, this used `~ .console-wrapper` which failed because 
    .console-wrapper is nested inside .app-container).
    ========================================================================== */
@@ -1124,12 +1124,12 @@ input[type="checkbox"] {
 /* --------------------------------------------------------------------------
    STATE: POWER ON
    -------------------------------------------------------------------------- */
-#power-toggle:checked ~ .app-container .power-off-screen {
+#power-toggle:checked ~ .console-wrapper .power-off-screen {
   opacity: 0;
   visibility: hidden;
 }
 
-#power-toggle:checked ~ .app-container .screen-display {
+#power-toggle:checked ~ .console-wrapper .screen-display {
   filter: brightness(1) contrast(1);
   box-shadow: 
     inset 0 0 20px rgba(255, 255, 255, 0.15),
@@ -1137,7 +1137,7 @@ input[type="checkbox"] {
   transition: filter var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
-#power-toggle:checked ~ #night-toggle:checked ~ .app-container .screen-display {
+#power-toggle:checked ~ #night-toggle:checked ~ .console-wrapper .screen-display {
   box-shadow: 
     inset 0 0 20px rgba(255, 255, 255, 0.05),
     0 0 15px rgba(29, 26, 57, 0.6);
@@ -1146,38 +1146,38 @@ input[type="checkbox"] {
 /* --------------------------------------------------------------------------
    STATE: NIGHT MODE
    -------------------------------------------------------------------------- */
-#night-toggle:checked ~ .app-container .environment-bg {
+#night-toggle:checked ~ .console-wrapper .environment-bg {
   background: var(--color-screen-bg-night);
 }
 
-#night-toggle:checked ~ .app-container .sun {
+#night-toggle:checked ~ .console-wrapper .sun {
   transform: translateY(80px);
   opacity: 0;
 }
 
-#night-toggle:checked ~ .app-container .moon {
+#night-toggle:checked ~ .console-wrapper .moon {
   transform: translateY(0);
   opacity: 1;
 }
 
-#night-toggle:checked ~ .app-container .stars {
+#night-toggle:checked ~ .console-wrapper .stars {
   opacity: 0.85;
 }
 
 /* Pikachu night shading and glowing cheeks */
-#night-toggle:checked ~ .app-container .pikachu-head,
-#night-toggle:checked ~ .app-container .pikachu-body,
-#night-toggle:checked ~ .app-container .ear,
-#night-toggle:checked ~ .app-container .arm,
-#night-toggle:checked ~ .app-container .foot,
-#night-toggle:checked ~ .app-container .tail-joint {
+#night-toggle:checked ~ .console-wrapper .pikachu-head,
+#night-toggle:checked ~ .console-wrapper .pikachu-body,
+#night-toggle:checked ~ .console-wrapper .ear,
+#night-toggle:checked ~ .console-wrapper .arm,
+#night-toggle:checked ~ .console-wrapper .foot,
+#night-toggle:checked ~ .console-wrapper .tail-joint {
   background-color: var(--color-pika-yellow-dark);
 }
-#night-toggle:checked ~ .app-container .mouth-lip {
+#night-toggle:checked ~ .console-wrapper .mouth-lip {
   background-color: var(--color-pika-yellow-dark);
 }
 
-#night-toggle:checked ~ .app-container .cheek {
+#night-toggle:checked ~ .console-wrapper .cheek {
   box-shadow: 
     0 0 10px var(--color-pika-cheek),
     0 0 20px var(--color-pika-cheek),
@@ -1185,58 +1185,58 @@ input[type="checkbox"] {
 }
 
 /* Night Active HUD toggle indicators */
-#night-toggle:checked ~ .app-container .btn-start {
+#night-toggle:checked ~ .console-wrapper .btn-start {
   background-color: #3a3b56;
   transform: translateY(1.5px);
 }
-#night-toggle:checked ~ .app-container .dpad-right {
+#night-toggle:checked ~ .console-wrapper .dpad-right {
   background-color: #3a3b56;
 }
 
 /* --------------------------------------------------------------------------
    STATE: SLEEP MODE
    -------------------------------------------------------------------------- */
-#sleep-toggle:checked ~ .app-container .sleep-eyelid {
+#sleep-toggle:checked ~ .console-wrapper .sleep-eyelid {
   height: 100%;
 }
 
 /* Close mouth when sleeping */
-#sleep-toggle:checked ~ .app-container .mouth-open {
+#sleep-toggle:checked ~ .console-wrapper .mouth-open {
   transform: scaleY(0.1);
 }
 
 /* Slow, deep breathing animation */
-#sleep-toggle:checked ~ .app-container .pikachu {
+#sleep-toggle:checked ~ .console-wrapper .pikachu {
   animation: breathing 4s infinite ease-in-out;
 }
 
 /* Ears fall slightly while asleep */
-#sleep-toggle:checked ~ .app-container .ear-left {
+#sleep-toggle:checked ~ .console-wrapper .ear-left {
   transform: rotate(-45deg);
 }
-#sleep-toggle:checked ~ .app-container .ear-right {
+#sleep-toggle:checked ~ .console-wrapper .ear-right {
   transform: rotate(45deg);
 }
 
 /* Arms settle down slightly */
-#sleep-toggle:checked ~ .app-container .arm-left {
+#sleep-toggle:checked ~ .console-wrapper .arm-left {
   transform: rotate(20deg);
 }
-#sleep-toggle:checked ~ .app-container .arm-right {
+#sleep-toggle:checked ~ .console-wrapper .arm-right {
   transform: rotate(-20deg);
 }
 
 /* Float Zzz particles */
-#sleep-toggle:checked ~ .app-container .zzz-1 { animation: float-zzz 3s infinite linear; }
-#sleep-toggle:checked ~ .app-container .zzz-2 { animation: float-zzz 3s infinite linear 1s; }
-#sleep-toggle:checked ~ .app-container .zzz-3 { animation: float-zzz 3s infinite linear 2s; }
+#sleep-toggle:checked ~ .console-wrapper .zzz-1 { animation: float-zzz 3s infinite linear; }
+#sleep-toggle:checked ~ .console-wrapper .zzz-2 { animation: float-zzz 3s infinite linear 1s; }
+#sleep-toggle:checked ~ .console-wrapper .zzz-3 { animation: float-zzz 3s infinite linear 2s; }
 
 /* HUD Message Swap for sleep */
-#sleep-toggle:checked ~ .app-container .msg-idle { opacity: 0; }
-#sleep-toggle:checked ~ .app-container .msg-sleep { opacity: 1; }
+#sleep-toggle:checked ~ .console-wrapper .msg-idle { opacity: 0; }
+#sleep-toggle:checked ~ .console-wrapper .msg-sleep { opacity: 1; }
 
 /* Sleeping button active state */
-#sleep-toggle:checked ~ .app-container .btn-b {
+#sleep-toggle:checked ~ .console-wrapper .btn-b {
   transform: scale(0.9) translateY(2px);
   background: linear-gradient(135deg, #1d1b24, #3a3b56);
   box-shadow: inset 0 2px 5px rgba(0,0,0,0.8);
@@ -1246,12 +1246,12 @@ input[type="checkbox"] {
    STATE: SHOCK MODE
    -------------------------------------------------------------------------- */
 /* Screen shaking */
-#shock-toggle:checked ~ .app-container .screen-display {
+#shock-toggle:checked ~ .console-wrapper .screen-display {
   animation: screen-shake 0.15s infinite;
 }
 
 /* Cheeks flare up */
-#shock-toggle:checked ~ .app-container .cheek {
+#shock-toggle:checked ~ .console-wrapper .cheek {
   background-color: #fff;
   box-shadow: 
     0 0 15px #ffeb3b,
@@ -1260,39 +1260,39 @@ input[type="checkbox"] {
 }
 
 /* Pikachu expressions during shock */
-#shock-toggle:checked ~ .app-container .mouth-open {
+#shock-toggle:checked ~ .console-wrapper .mouth-open {
   transform: scale(1.3);
   background-color: #e63946;
 }
 
-#shock-toggle:checked ~ .app-container .eye-left,
-#shock-toggle:checked ~ .app-container .eye-right {
+#shock-toggle:checked ~ .console-wrapper .eye-left,
+#shock-toggle:checked ~ .console-wrapper .eye-right {
   transform: scaleY(0.7);
 }
 
 /* Lightning Spark animations */
-#shock-toggle:checked ~ .app-container .spark-1 { animation: spark-flash-1 0.4s infinite linear; }
-#shock-toggle:checked ~ .app-container .spark-2 { animation: spark-flash-2 0.4s infinite linear 0.1s; }
-#shock-toggle:checked ~ .app-container .spark-3 { animation: spark-flash-3 0.4s infinite linear 0.2s; }
-#shock-toggle:checked ~ .app-container .spark-4 { animation: spark-flash-4 0.4s infinite linear 0.05s; }
-#shock-toggle:checked ~ .app-container .shockwave { animation: shockwave-ring 0.8s infinite cubic-bezier(0.1, 0.8, 0.3, 1); }
+#shock-toggle:checked ~ .console-wrapper .spark-1 { animation: spark-flash-1 0.4s infinite linear; }
+#shock-toggle:checked ~ .console-wrapper .spark-2 { animation: spark-flash-2 0.4s infinite linear 0.1s; }
+#shock-toggle:checked ~ .console-wrapper .spark-3 { animation: spark-flash-3 0.4s infinite linear 0.2s; }
+#shock-toggle:checked ~ .console-wrapper .spark-4 { animation: spark-flash-4 0.4s infinite linear 0.05s; }
+#shock-toggle:checked ~ .console-wrapper .shockwave { animation: shockwave-ring 0.8s infinite cubic-bezier(0.1, 0.8, 0.3, 1); }
 
 /* Energy drain HP bar */
-#shock-toggle:checked ~ .app-container .hud-hp-fill {
+#shock-toggle:checked ~ .console-wrapper .hud-hp-fill {
   width: 35%;
   background-color: #ff3333;
   animation: pulse-hp 0.2s infinite alternate;
 }
-#shock-toggle:checked ~ .app-container .hud-hp-text {
+#shock-toggle:checked ~ .console-wrapper .hud-hp-text {
   content: "35/100";
 }
 
 /* HUD message swap for shock */
-#shock-toggle:checked ~ .app-container .msg-idle { opacity: 0; }
-#shock-toggle:checked ~ .app-container .msg-shock { opacity: 1; color: #ff3333; }
+#shock-toggle:checked ~ .console-wrapper .msg-idle { opacity: 0; }
+#shock-toggle:checked ~ .console-wrapper .msg-shock { opacity: 1; color: #ff3333; }
 
 /* Shocking button active state */
-#shock-toggle:checked ~ .app-container .btn-a {
+#shock-toggle:checked ~ .console-wrapper .btn-a {
   transform: scale(0.9) translateY(2px);
   background: linear-gradient(135deg, #1d1b24, #3a3b56);
   box-shadow: inset 0 2px 5px rgba(0,0,0,0.8);
@@ -1301,55 +1301,55 @@ input[type="checkbox"] {
 /* --------------------------------------------------------------------------
    STATE: DANCE MODE
    -------------------------------------------------------------------------- */
-#dance-toggle:checked ~ .app-container .pikachu {
+#dance-toggle:checked ~ .console-wrapper .pikachu {
   animation: pikachu-dance 0.7s infinite alternate ease-in-out;
 }
 
-#dance-toggle:checked ~ .app-container .ear-left {
+#dance-toggle:checked ~ .console-wrapper .ear-left {
   animation: ear-wag-l 0.35s infinite alternate ease-in-out;
 }
-#dance-toggle:checked ~ .app-container .ear-right {
+#dance-toggle:checked ~ .console-wrapper .ear-right {
   animation: ear-wag-r 0.35s infinite alternate ease-in-out;
 }
 
-#dance-toggle:checked ~ .app-container .arm-left {
+#dance-toggle:checked ~ .console-wrapper .arm-left {
   animation: arm-raise-l 0.35s infinite alternate ease-in-out;
 }
-#dance-toggle:checked ~ .app-container .arm-right {
+#dance-toggle:checked ~ .console-wrapper .arm-right {
   animation: arm-raise-r 0.35s infinite alternate ease-in-out;
 }
 
-#dance-toggle:checked ~ .app-container .pikachu-tail {
+#dance-toggle:checked ~ .console-wrapper .pikachu-tail {
   animation: tail-wag 0.35s infinite alternate ease-in-out;
 }
 
 /* HUD message swap for dance */
-#dance-toggle:checked ~ .app-container .msg-idle { opacity: 0; }
-#dance-toggle:checked ~ .app-container .msg-dance { opacity: 1; }
+#dance-toggle:checked ~ .console-wrapper .msg-idle { opacity: 0; }
+#dance-toggle:checked ~ .console-wrapper .msg-dance { opacity: 1; }
 
 /* Dancing D-Pad active buttons state mapping */
-#dance-toggle:checked ~ .app-container .btn-select {
+#dance-toggle:checked ~ .console-wrapper .btn-select {
   background-color: #3a3b56;
   transform: translateY(1.5px);
 }
-#dance-toggle:checked ~ .app-container .dpad-left {
+#dance-toggle:checked ~ .console-wrapper .dpad-left {
   background-color: #3a3b56;
 }
 
 /* --- CONFLICT RESOLUTION: Sleep + Shock / Sleep + Dance --- */
 /* Sleep overrides Shock and Dance animations to ensure Pikachu rests */
-#sleep-toggle:checked ~ .app-container .pikachu {
+#sleep-toggle:checked ~ .console-wrapper .pikachu {
   animation: breathing 4s infinite ease-in-out !important;
 }
-#sleep-toggle:checked ~ .app-container .pikachu-tail {
+#sleep-toggle:checked ~ .console-wrapper .pikachu-tail {
   animation: none !important;
 }
-#sleep-toggle:checked ~ .app-container .ear-left,
-#sleep-toggle:checked ~ .app-container .ear-right {
+#sleep-toggle:checked ~ .console-wrapper .ear-left,
+#sleep-toggle:checked ~ .console-wrapper .ear-right {
   animation: none !important;
 }
-#sleep-toggle:checked ~ .app-container .arm-left,
-#sleep-toggle:checked ~ .app-container .arm-right {
+#sleep-toggle:checked ~ .console-wrapper .arm-left,
+#sleep-toggle:checked ~ .console-wrapper .arm-right {
   animation: none !important;
 }
 
