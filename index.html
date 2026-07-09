@@ -14,11 +14,11 @@
 
   <div class="app-container">
     <!-- Hidden state controllers (CSS Checkbox Hack) -->
-    <input type="checkbox" id="power-toggle" checked>
-    <input type="checkbox" id="night-toggle">
-    <input type="checkbox" id="sleep-toggle">
-    <input type="checkbox" id="shock-toggle">
-    <input type="checkbox" id="dance-toggle">
+    <input type="checkbox" id="power-toggle" checked autocomplete="off">
+    <input type="checkbox" id="night-toggle" autocomplete="off">
+    <input type="checkbox" id="sleep-toggle" autocomplete="off">
+    <input type="checkbox" id="shock-toggle" autocomplete="off">
+    <input type="checkbox" id="dance-toggle" autocomplete="off">
 
     <header class="app-header">
       <h1>PURE CSS ART FESTIVAL</h1>
@@ -29,9 +29,11 @@
       
       <!-- Power Slider Controller (visually sits above console) -->
       <div class="power-slider-container">
-        <span class="power-label">POWER</span>
-        <label for="power-toggle" class="power-switch-slot">
-          <span class="power-switch-knob"></span>
+        <label for="power-toggle" class="power-switch-label-wrapper">
+          <span class="power-label">POWER</span>
+          <span class="power-switch-slot">
+            <span class="power-switch-knob"></span>
+          </span>
         </label>
       </div>
 
