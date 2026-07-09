@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pikachu Console - Pure CSS Art</title>
+  <!-- Google Fonts for Retro & Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hidden state controllers (CSS Checkbox Hack) -->
+  <input type="checkbox" id="power-toggle" checked>
+  <input type="checkbox" id="night-toggle">
+  <input type="checkbox" id="sleep-toggle">
+  <input type="checkbox" id="shock-toggle">
+  <input type="checkbox" id="dance-toggle">
+
+  <div class="app-container">
+    <header class="app-header">
+      <h1>PURE CSS ART FESTIVAL</h1>
+      <p>An interactive, animated Pikachu mascot housed in a retro-modern console. 100% Pure HTML &amp; CSS.</p>
+    </header>
+
+    <main class="console-wrapper">
+      
+      <!-- Power Slider Controller (visually sits above console) -->
+      <div class="power-slider-container">
+        <span class="power-label">POWER</span>
+        <label for="power-toggle" class="power-switch-slot">
+          <span class="power-switch-knob"></span>
+        </label>
+      </div>
+
+      <!-- Main Console Chassis -->
+      <div class="console-body">
+        
+        <!-- Screen Bezel -->
+        <div class="screen-bezel">
+          <div class="bezel-top-lines">
+            <span class="bezel-line-left"></span>
+            <span class="bezel-brand">PIKA BOY <span class="color-text">C</span><span class="color-text">O</span><span class="color-text">L</span><span class="color-text">O</span><span class="color-text">R</span></span>
+            <span class="bezel-line-right"></span>
+          </div>
+
+          <!-- Screen Window -->
+          <div class="screen-window">
+            
+            <!-- Power Indicator LED -->
+            <div class="power-led-container">
+              <span class="power-led"></span>
+              <span class="led-label">POWER</span>
+            </div>
+
+            <!-- Screen Display Area -->
+            <div class="screen-display">
+              
+              <!-- Screen Scanlines & Glare -->
+              <div class="screen-overlay"></div>
+              
+              <!-- Environment Scenery -->
+              <div class="environment-bg">
+                <!-- Stars (Night Mode only) -->
+                <div class="stars">
+                  <span class="star star-1"></span>
+                  <span class="star star-2"></span>
+                  <span class="star star-3"></span>
+                  <span class="star star-4"></span>
+                  <span class="star star-5"></span>
+                  <span class="star star-6"></span>
+                </div>
+                
+                <!-- Celestial Body -->
+                <div class="celestial-body">
+                  <div class="sun"></div>
+                  <div class="moon"></div>
+                </div>
+
+                <!-- Floating Clouds -->
+                <div class="clouds-container">
+                  <div class="cloud cloud-left"></div>
+                  <div class="cloud cloud-right"></div>
+                </div>
+
+                <!-- Hills -->
+                <div class="hills">
+                  <div class="hill hill-back"></div>
+                  <div class="hill hill-front"></div>
+                </div>
+              </div>
+
+              <!-- Zzz Sleep Particles -->
+              <div class="zzz-container">
+                <span class="zzz zzz-1">Z</span>
+                <span class="zzz zzz-2">z</span>
+                <span class="zzz zzz-3">z</span>
+              </div>
+
+              <!-- Lightning / Electrical Sparks -->
+              <div class="lightning-container">
+                <div class="spark spark-1"></div>
+                <div class="spark spark-2"></div>
+                <div class="spark spark-3"></div>
+                <div class="spark spark-4"></div>
+                <div class="shockwave"></div>
+              </div>
+
+              <!-- CSS Pikachu Character Mascot -->
+              <div class="pikachu">
+                
+                <!-- Tail -->
+                <div class="pikachu-tail">
+                  <span class="tail-joint joint-1"></span>
+                  <span class="tail-joint joint-2"></span>
+                  <span class="tail-joint joint-3"></span>
+                  <span class="tail-joint joint-4"></span>
+                  <span class="tail-joint joint-tip"></span>
+                </div>
+
+                <!-- Feet -->
+                <div class="pikachu-feet">
+                  <div class="foot foot-left">
+                    <span class="toe"></span><span class="toe"></span>
+                  </div>
+                  <div class="foot foot-right">
+                    <span class="toe"></span><span class="toe"></span>
+                  </div>
+                </div>
+
+                <!-- Body -->
+                <div class="pikachu-body">
+                  <!-- Brown stripes on back (visible at sides) -->
+                  <span class="stripe stripe-top"></span>
+                  <span class="stripe stripe-bottom"></span>
+                </div>
+
+                <!-- Arms -->
+                <div class="pikachu-arms">
+                  <div class="arm arm-left">
+                    <span class="claw"></span><span class="claw"></span>
+                  </div>
+                  <div class="arm arm-right">
+                    <span class="claw"></span><span class="claw"></span>
+                  </div>
+                </div>
+
+                <!-- Head Structure -->
+                <div class="pikachu-head">
+                  
+                  <!-- Ears -->
+                  <div class="ear ear-left">
+                    <div class="ear-inner"></div>
+                    <div class="ear-tip"></div>
+                  </div>
+                  <div class="ear ear-right">
+                    <div class="ear-inner"></div>
+                    <div class="ear-tip"></div>
+                  </div>
+
+                  <!-- Face Details -->
+                  <div class="pikachu-face">
+                    <!-- Eyes -->
+                    <div class="eye eye-left">
+                      <span class="pupil-highlight-large"></span>
+                      <span class="pupil-highlight-small"></span>
+                      <span class="sleep-eyelid"></span>
+                    </div>
+                    <div class="eye eye-right">
+                      <span class="pupil-highlight-large"></span>
+                      <span class="pupil-highlight-small"></span>
+                      <span class="sleep-eyelid"></span>
+                    </div>
+
+                    <!-- Cheeks -->
+                    <div class="cheek cheek-left">
+                      <span class="cheek-glow"></span>
+                    </div>
+                    <div class="cheek cheek-right">
+                      <span class="cheek-glow"></span>
+                    </div>
+
+                    <!-- Nose -->
+                    <div class="nose"></div>
+
+                    <!-- Mouth -->
+                    <div class="mouth-container">
+                      <div class="mouth-lip lip-left"></div>
+                      <div class="mouth-lip lip-right"></div>
+                      <div class="mouth-open">
+                        <span class="tongue"></span>
+                      </div>
+                    </div>
+                  </div> <!-- End Face -->
+
+                </div> <!-- End Head -->
+
+              </div> <!-- End Pikachu -->
+
+              <!-- Retro HUD Overlay -->
+              <div class="hud-overlay">
+                <div class="hud-top">
+                  <span class="hud-name">PIKACHU</span>
+                  <span class="hud-lv">Lv25</span>
+                </div>
+                <div class="hud-hp-bar">
+                  <span class="hud-hp-label">HP</span>
+                  <div class="hud-hp-track">
+                    <div class="hud-hp-fill"></div>
+                  </div>
+                  <span class="hud-hp-text">100/100</span>
+                </div>
+                <div class="hud-status-messages">
+                  <span class="msg-idle">Awaiting commands...</span>
+                  <span class="msg-sleep">Zzz... Pikachu is sleeping.</span>
+                  <span class="msg-shock">WARNING: HIGH VOLTAGE!</span>
+                  <span class="msg-dance">Pikachu is happy! ♪</span>
+                </div>
+              </div>
+
+              <!-- Power Off Black Screen -->
+              <div class="power-off-screen">
+                <span class="power-off-logo"></span>
+              </div>
+
+            </div> <!-- End Screen Display -->
+          </div> <!-- End Screen Window -->
+        </div> <!-- End Screen Bezel -->
+
+        <!-- Console Controls Area -->
+        <div class="controls-area">
+          
+          <!-- D-Pad (Left controls Dance, Right controls Day/Night) -->
+          <div class="dpad-container">
+            <div class="dpad">
+              <div class="dpad-axis horizontal"></div>
+              <div class="dpad-axis vertical"></div>
+              <div class="dpad-center"></div>
+              
+              <!-- D-Pad Buttons linked to controls -->
+              <label for="dance-toggle" class="dpad-btn dpad-left" title="Toggle Dance Mode"></label>
+              <label for="night-toggle" class="dpad-btn dpad-right" title="Toggle Night Mode"></label>
+              <span class="dpad-btn dpad-up" title="Look Up (Decorative)"></span>
+              <span class="dpad-btn dpad-down" title="Look Down (Decorative)"></span>
+            </div>
+            <div class="dpad-hints">
+              <span class="hint-l">DANCE</span>
+              <span class="hint-r">NIGHT</span>
+            </div>
+          </div>
+
+          <!-- A / B Buttons (A controls Shock, B controls Sleep) -->
+          <div class="action-buttons">
+            <div class="btn-group btn-b-group">
+              <label for="sleep-toggle" class="action-btn btn-b" title="Toggle Sleep Mode">
+                <span class="btn-inner">B</span>
+              </label>
+              <span class="btn-label">SLEEP</span>
+            </div>
+            <div class="btn-group btn-a-group">
+              <label for="shock-toggle" class="action-btn btn-a" title="Toggle Shock Mode">
+                <span class="btn-inner">A</span>
+              </label>
+              <span class="btn-label">SHOCK</span>
+            </div>
+          </div>
+
+          <!-- Select / Start Utility Buttons -->
+          <div class="utility-buttons">
+            <div class="util-group">
+              <label for="dance-toggle" class="util-btn btn-select" title="Toggle Dance Mode"></label>
+              <span class="util-label">SELECT</span>
+            </div>
+            <div class="util-group">
+              <label for="night-toggle" class="util-btn btn-start" title="Toggle Day/Night Mode"></label>
+              <span class="util-label">START</span>
+            </div>
+          </div>
+
+          <!-- Speaker Grille Slots -->
+          <div class="speaker-grille">
+            <span class="speaker-slot"></span>
+            <span class="speaker-slot"></span>
+            <span class="speaker-slot"></span>
+            <span class="speaker-slot"></span>
+            <span class="speaker-slot"></span>
+            <span class="speaker-slot"></span>
+          </div>
+
+        </div> <!-- End Controls Area -->
+
+      </div> <!-- End Console Body -->
+      
+      <!-- Interactive Instructions Panel (Pure CSS hover toggles or just clean text) -->
+      <footer class="console-instructions">
+        <h3>Console Operations Manual</h3>
+        <ul>
+          <li><strong>Power Switch:</strong> Click the slider at the top left to power the console ON/OFF.</li>
+          <li><strong>D-Pad Left / Select:</strong> Toggle Pikachu's dance and tail wagging.</li>
+          <li><strong>D-Pad Right / Start:</strong> Toggle Day/Night cycle (watch the screen shift and stars appear!).</li>
+          <li><strong>Button A:</strong> Trigger Thunderbolt attack (high-voltage screen shake and electricity!).</li>
+          <li><strong>Button B:</strong> Send Pikachu to sleep (breathing slows down, eyes close, Zzz floats up).</li>
+        </ul>
+      </footer>
+
+    </main>
+  </div>
+
+</body>
+</html>
