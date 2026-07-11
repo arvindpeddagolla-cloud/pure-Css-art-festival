@@ -177,8 +177,9 @@ input[type="checkbox"] {
   border-radius: 20px 20px 80px 20px;
   padding: 24px;
   box-shadow: 
-    0 15px 35px rgba(0, 0, 0, 0.6),
-    inset 0 4px 0 rgba(255, 255, 255, 0.4),
+    0 30px 60px -10px rgba(0, 0, 0, 0.8),
+    0 15px 30px -15px rgba(0, 0, 0, 0.9),
+    inset 0 4px 0 rgba(255, 255, 255, 0.45),
     inset 0 -10px 20px rgba(0, 0, 0, 0.3);
   border: 4px solid #8d0b13;
   display: flex;
@@ -566,16 +567,27 @@ input[type="checkbox"] {
   transform-origin: bottom left;
 }
 
-/* Black Ear Tips */
-.ear::after {
+/* Slanted Black Ear Tips */
+.ear-left::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: -4px;
+  left: -6px;
+  width: 150%;
   height: 24px;
   background-color: var(--color-dark);
-  border-radius: 50% 50% 0 0;
+  transform: rotate(-15deg);
+}
+
+.ear-right::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -6px;
+  width: 150%;
+  height: 24px;
+  background-color: var(--color-dark);
+  transform: rotate(15deg);
 }
 
 /* --- Face Details --- */
@@ -804,17 +816,29 @@ input[type="checkbox"] {
 /* Tiny claws */
 .claw {
   position: absolute;
-  bottom: -2px;
+  bottom: -1px;
   width: 3px;
-  height: 4px;
+  height: 5px;
   background-color: var(--color-pika-yellow);
   border-radius: 50% 50% 0 0;
-  border-bottom: 1.5px solid rgba(0,0,0,0.15);
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+  transform-origin: top center;
+  transition: background var(--transition-speed) ease;
 }
-.arm-left .claw:nth-child(1) { left: 4px; }
-.arm-left .claw:nth-child(2) { left: 9px; }
-.arm-right .claw:nth-child(1) { right: 4px; }
-.arm-right .claw:nth-child(2) { right: 9px; }
+
+/* Fan shape claws for Left Arm */
+.arm-left .claw-1 { left: 2px; transform: rotate(-30deg); }
+.arm-left .claw-2 { left: 5px; transform: rotate(-15deg); }
+.arm-left .claw-3 { left: 8px; transform: rotate(0deg); }
+.arm-left .claw-4 { left: 11px; transform: rotate(15deg); }
+.arm-left .claw-5 { left: 14px; transform: rotate(30deg); }
+
+/* Fan shape claws for Right Arm */
+.arm-right .claw-1 { right: 2px; transform: rotate(30deg); }
+.arm-right .claw-2 { right: 5px; transform: rotate(15deg); }
+.arm-right .claw-3 { right: 8px; transform: rotate(0deg); }
+.arm-right .claw-4 { right: 11px; transform: rotate(-15deg); }
+.arm-right .claw-5 { right: 14px; transform: rotate(-30deg); }
 
 /* --- Feet --- */
 .pikachu-feet {
@@ -848,18 +872,29 @@ input[type="checkbox"] {
   border-radius: 60% 40% 30% 40% / 50% 40% 40% 50%;
 }
 
+/* 3D Curved Toes */
 .foot .toe {
   position: absolute;
-  top: 2px;
-  width: 2.5px;
-  height: 6px;
-  background-color: rgba(0,0,0,0.15);
-  border-radius: 1px;
+  width: 8px;
+  height: 11px;
+  background-color: var(--color-pika-yellow);
+  border-radius: 50% 50% 30% 30%;
+  box-shadow: 
+    inset -1px -1.5px 0 rgba(0, 0, 0, 0.08),
+    0 1.5px 2px rgba(0, 0, 0, 0.12);
+  transition: background var(--transition-speed) ease;
+  z-index: 5;
 }
-.foot-left .toe:nth-child(1) { left: 10px; }
-.foot-left .toe:nth-child(2) { left: 18px; }
-.foot-right .toe:nth-child(1) { right: 10px; }
-.foot-right .toe:nth-child(2) { right: 18px; }
+
+/* Positioning toes on Left Foot */
+.foot-left .toe-1 { left: 4px; bottom: -4px; transform: rotate(-10deg); }
+.foot-left .toe-2 { left: 13px; bottom: -5px; transform: rotate(0deg); }
+.foot-left .toe-3 { left: 22px; bottom: -4px; transform: rotate(10deg); }
+
+/* Positioning toes on Right Foot */
+.foot-right .toe-1 { right: 4px; bottom: -4px; transform: rotate(10deg); }
+.foot-right .toe-2 { right: 13px; bottom: -5px; transform: rotate(0deg); }
+.foot-right .toe-3 { right: 22px; bottom: -4px; transform: rotate(-10deg); }
 
 /* --- Lightning Bolt Tail --- */
 .pikachu-tail {
@@ -1801,4 +1836,70 @@ input[type="checkbox"] {
 @keyframes tail-wag {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(15deg); }
+}
+
+/* --- High-Fidelity Additions (Bezel Stripes, Dust Particles, etc.) --- */
+.bezel-bottom-stripes {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.bezel-stripe {
+  height: 2px;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.bezel-stripe-blue {
+  background-color: #00b4d8;
+  box-shadow: 0 0 3px rgba(0, 180, 216, 0.4);
+}
+
+.bezel-stripe-purple {
+  background-color: #9b5de5;
+  box-shadow: 0 0 3px rgba(155, 93, 229, 0.4);
+}
+
+/* --- Ambient Dust / Spark Particles --- */
+.dust-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background-color: rgba(255, 235, 59, 0.45);
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(255, 235, 59, 0.7);
+  opacity: 0;
+}
+
+.p-1 { width: 3px; height: 3px; left: 15%; animation: float-particle 12s infinite linear; }
+.p-2 { width: 4px; height: 4px; left: 45%; animation: float-particle 16s infinite linear 3s; }
+.p-3 { width: 3px; height: 3px; left: 70%; animation: float-particle 10s infinite linear 6s; }
+.p-4 { width: 5px; height: 5px; left: 85%; animation: float-particle 14s infinite linear 1.5s; }
+
+@keyframes float-particle {
+  0% {
+    transform: translateY(260px) translateX(0) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-20px) translateX(20px) scale(1.2);
+    opacity: 0;
+  }
 }
